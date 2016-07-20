@@ -1,5 +1,48 @@
 {% extends 'base.html.twig' %}
+                {% block page_header %}
+                    <section class="content-header">
+                        <h1>
+                            Home
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li class="active"><a href="/"><i class="fa fa-home"></i> Home</a></li>
+                        </ol>
+                    </section>
+                {% endblock %}
+{%  block body_content %}
 
- 
+    <div class="box box-primary">
+
+        <!-- Your Page Content Here -->
+
+        <div class="box-header ">
+
+        </div>
+
+        <div class="box-body">
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="box box-primary box-solid ">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">What is this ? </h3>
+                        </div><!-- /.box-header -->
+                        <div class="box-body">
+                           <p>This self-analysis tool, comprising of 48 diagnostic questions, will allow you to self-audit your academic skills development needs. Based upon your responses you provide you the tool will generate a set of personal recommendations which you can use to devise a plan of action to develop your academic skills.</p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div><!-- /.box-body -->
+                    </div><!-- /.box -->
+                </div>
+                <div class="col-md-6">
+                    <img class="img-responsive"  src="{{ asset('assets/images/Portfolio_Unit.png') }}"/>
+                </div>
+            </div>
+
+
+            <!-- /.box-body -->
+        </div>
+    </div>
+    <!-- /.box -->
+{%  endblock %}
 
 

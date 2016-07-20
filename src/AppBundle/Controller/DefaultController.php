@@ -9,6 +9,8 @@ use Symfony\Component\Console\Question\Question;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\QuestionCategory;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use AppBundle\Form\ContactType;
+use AppBundle\Entity\Contact;
 
 
 class DefaultController extends Controller
@@ -27,7 +29,9 @@ class DefaultController extends Controller
      * @Route("/contact", name="contact")
      */
     public function ContactAction(){
-        return $this->render('default/contact.html.twig', []);
+        $contact = new Contact();
+        $form = $this->createForm(ContactType::class,$contact);
+        return $this->render('default/contact.html.twig', ['form'=>$form->createView()]);
     }
     /**
      * @Route("/cats", name="cats")
@@ -37,11 +41,5 @@ class DefaultController extends Controller
         return $this->render('default/index.html.twig', ['categories'=>$cats]);
 
     }
-    /**
-         * @Route("/skills/questions", name="questions")
-     */
-    public function QuestionsActions(){
-        $questions = $this->getDoctrine()->getRepository('AppBundle:Questions')->findAll();
-        return $this->render('skills/questions.html.twig', ['questions'=> $questions]);
-    }
+
 }

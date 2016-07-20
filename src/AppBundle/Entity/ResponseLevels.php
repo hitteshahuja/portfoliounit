@@ -26,7 +26,7 @@ class ResponseLevels
      *
      * @ORM\Column(name="response_levels", type="string", length=255)
      */
-    private $responseLevels;
+    public $responseLevels;
 
     /**
      * @var int
